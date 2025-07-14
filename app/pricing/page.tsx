@@ -211,7 +211,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Compare All Features</h2>
-            <p className="text-xl text-gray-600">See what's included in each plan</p>
+            <p className="text-xl text-gray-600">See what&apos;s included in each plan</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">

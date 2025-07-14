@@ -1,17 +1,27 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Navigation from "@/components/shared/navigation"
-import Footer from "@/components/shared/footer"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, Clock, ArrowRight, MessageCircle, Users, Headphones, CheckCircle } from "lucide-react"
+import { useState } from "react";
+import Navigation from "@/components/shared/navigation";
+import Footer from "@/components/shared/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  ArrowRight,
+  MessageCircle,
+  Users,
+  Headphones,
+  CheckCircle,
+} from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,23 +31,25 @@ export default function ContactPage() {
     phone: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitted(true)
-    }, 1000)
-  }
+      setIsSubmitted(true);
+    }, 1000);
+  };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const contactMethods = [
     {
@@ -61,7 +73,7 @@ export default function ContactPage() {
       contact: "Available 24/7",
       action: "Start Chat",
     },
-  ]
+  ];
 
   const officeLocations = [
     {
@@ -82,7 +94,7 @@ export default function ContactPage() {
       zipcode: "London, UK W1C 1JN",
       phone: "+44 20 7123 4567",
     },
-  ]
+  ];
 
   const supportOptions = [
     {
@@ -103,7 +115,7 @@ export default function ContactPage() {
       description: "Guidance on growing your business",
       availability: "Mon-Fri, 8AM-8PM PST",
     },
-  ]
+  ];
 
   if (isSubmitted) {
     return (
@@ -113,9 +125,12 @@ export default function ContactPage() {
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8">
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">Thank You!</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                Thank You!
+              </h1>
               <p className="text-xl text-gray-600 mb-8">
-                We've received your message and will get back to you within 24 hours.
+                We&apos;ve received your message and will get back to you within
+                24 hours.
               </p>
               <Button
                 onClick={() => setIsSubmitted(false)}
@@ -128,7 +143,7 @@ export default function ContactPage() {
         </div>
         <Footer />
       </div>
-    )
+    );
   }
 
   return (
@@ -138,13 +153,18 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">💬 We're Here to Help</Badge>
+          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
+            💬 We&apos;re Here to Help
+          </Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Get in{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Touch
+            </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Have questions? We&apos;d love to hear from you. Send us a message
+            and we&apos;ll respond as soon as possible.
           </p>
         </div>
       </section>
@@ -153,8 +173,12 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Multiple Ways to Reach Us</h2>
-            <p className="text-xl text-gray-600">Choose the method that works best for you</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Multiple Ways to Reach Us
+            </h2>
+            <p className="text-xl text-gray-600">
+              Choose the method that works best for you
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -164,10 +188,16 @@ export default function ContactPage() {
                 className="p-6 text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-gray-50 to-white"
               >
                 <CardContent className="p-0">
-                  <div className="text-blue-600 mb-4 flex justify-center">{method.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{method.title}</h3>
+                  <div className="text-blue-600 mb-4 flex justify-center">
+                    {method.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {method.title}
+                  </h3>
                   <p className="text-gray-600 mb-4">{method.description}</p>
-                  <p className="font-semibold text-gray-900 mb-4">{method.contact}</p>
+                  <p className="font-semibold text-gray-900 mb-4">
+                    {method.contact}
+                  </p>
                   <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                     {method.action}
                   </Button>
@@ -182,8 +212,12 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
-            <p className="text-xl text-gray-600">Fill out the form below and we'll get back to you soon</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Send Us a Message
+            </h2>
+            <p className="text-xl text-gray-600">
+              Fill out the form below and we&apos;ll get back to you soon
+            </p>
           </div>
 
           <Card className="p-8">
@@ -286,8 +320,12 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Support Options</h2>
-            <p className="text-xl text-gray-600">Get the right help for your needs</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Support Options
+            </h2>
+            <p className="text-xl text-gray-600">
+              Get the right help for your needs
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -297,8 +335,12 @@ export default function ContactPage() {
                 className="p-6 text-center hover:shadow-lg transition-shadow border-0 bg-gradient-to-br from-gray-50 to-white"
               >
                 <CardContent className="p-0">
-                  <div className="text-blue-600 mb-4 flex justify-center">{option.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{option.title}</h3>
+                  <div className="text-blue-600 mb-4 flex justify-center">
+                    {option.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {option.title}
+                  </h3>
                   <p className="text-gray-600 mb-4">{option.description}</p>
                   <div className="flex items-center justify-center text-sm text-gray-500">
                     <Clock className="h-4 w-4 mr-2" />
@@ -315,15 +357,21 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Offices</h2>
-            <p className="text-xl text-gray-600">Visit us at one of our global locations</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our Offices
+            </h2>
+            <p className="text-xl text-gray-600">
+              Visit us at one of our global locations
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {officeLocations.map((office, index) => (
               <Card key={index} className="p-6 bg-white">
                 <CardContent className="p-0">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{office.city}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {office.city}
+                  </h3>
                   <div className="space-y-3">
                     <div className="flex items-start">
                       <MapPin className="h-5 w-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
@@ -348,8 +396,12 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Quick answers to common questions</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600">
+              Quick answers to common questions
+            </p>
           </div>
 
           <div className="space-y-8">
@@ -359,38 +411,48 @@ export default function ContactPage() {
                   How quickly do you respond to support requests?
                 </h3>
                 <p className="text-gray-600">
-                  We respond to all support requests within 24 hours. For urgent issues, our live chat and phone support
-                  are available for immediate assistance.
+                  We respond to all support requests within 24 hours. For urgent
+                  issues, our live chat and phone support are available for
+                  immediate assistance.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="p-6">
               <CardContent className="p-0">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Do you offer phone support?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Do you offer phone support?
+                </h3>
                 <p className="text-gray-600">
-                  Yes, we offer phone support for all paid plans. Enterprise customers get 24/7 phone support, while
-                  other plans have phone support during business hours.
+                  Yes, we offer phone support for all paid plans. Enterprise
+                  customers get 24/7 phone support, while other plans have phone
+                  support during business hours.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="p-6">
               <CardContent className="p-0">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Can I schedule a demo?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Can I schedule a demo?
+                </h3>
                 <p className="text-gray-600">
-                  We offer personalized demos to show you how CommerceMax can work for your specific business needs.
-                  Contact our sales team to schedule one.
+                  We offer personalized demos to show you how CommerceMax can
+                  work for your specific business needs. Contact our sales team
+                  to schedule one.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="p-6">
               <CardContent className="p-0">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Do you provide migration assistance?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Do you provide migration assistance?
+                </h3>
                 <p className="text-gray-600">
-                  Yes, we provide free migration assistance to help you move from your current platform to CommerceMax.
-                  Our team will guide you through the entire process.
+                  Yes, we provide free migration assistance to help you move
+                  from your current platform to CommerceMax. Our team will guide
+                  you through the entire process.
                 </p>
               </CardContent>
             </Card>
@@ -401,11 +463,17 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Ready to Get Started?
+          </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Don't wait - start your free trial today and see why thousands of businesses choose CommerceMax
+            Don&apos;t wait - start your free trial today and see why thousands of
+            businesses choose CommerceMax
           </p>
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
+          >
             Start Free Trial
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
@@ -414,5 +482,5 @@ export default function ContactPage() {
 
       <Footer />
     </div>
-  )
+  );
 }

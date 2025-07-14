@@ -242,7 +242,7 @@ export default function FeaturesPage() {
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Everything you need to build, manage, and scale your ecommerce business. From inventory management to
-            advanced analytics, we've got you covered.
+            advanced analytics, we&apos;ve got you covered.
           </p>
           <Button
             size="lg"
@@ -260,7 +260,7 @@ export default function FeaturesPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Core Features</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive tools designed to help you succeed in today's competitive market
+              Comprehensive tools designed to help you succeed in today&apos;s competitive market
             </p>
           </div>
 
