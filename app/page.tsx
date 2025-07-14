@@ -203,7 +203,7 @@ export default function EcommerceLanding() {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-3xl"></div>
             <div className="relative bg-white rounded-2xl shadow-2xl p-4">
               <Image
-                src="/placeholder.svg?height=600&width=1000"
+                src="/admin-dashboard.png"
                 alt="Ecommerce Dashboard Preview"
                 width={1000}
                 height={600}
