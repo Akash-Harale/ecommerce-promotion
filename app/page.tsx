@@ -22,7 +22,6 @@ import Image from "next/image"
 import Navigation from "@/components/shared/navigation"
 
 export default function EcommerceLanding() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
   const testimonials = [
@@ -259,7 +258,7 @@ export default function EcommerceLanding() {
                   ))}
                 </div>
                 <blockquote className="text-xl text-gray-700 mb-6">
-                  "{testimonials[currentTestimonial].content}"
+                  {testimonials[currentTestimonial].content}
                 </blockquote>
                 <div className="flex items-center justify-center">
                   <Image
