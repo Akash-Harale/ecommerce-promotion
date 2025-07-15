@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Navigation from "@/components/shared/navigation"
-import Footer from "@/components/shared/footer"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import Navigation from "@/components/shared/navigation";
+import Footer from "@/components/shared/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   ShoppingBag,
   TrendingUp,
@@ -20,8 +20,11 @@ import {
   Settings,
   ArrowRight,
   Check,
-} from "lucide-react"
-import Image from "next/image"
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function FeaturesPage() {
   const mainFeatures = [
@@ -193,7 +196,7 @@ export default function FeaturesPage() {
         "Load balancing",
       ],
     },
-  ]
+  ];
 
   const additionalFeatures = [
     {
@@ -206,25 +209,142 @@ export default function FeaturesPage() {
       title: "One-Click Checkout",
       description: "Streamlined checkout process",
     },
-    { icon: <Users className="h-6 w-6" />, title: "Guest Checkout", description: "No account required to purchase" },
-    { icon: <Mail className="h-6 w-6" />, title: "Order Notifications", description: "Automated email & SMS alerts" },
-    { icon: <BarChart3 className="h-6 w-6" />, title: "Inventory Alerts", description: "Low stock notifications" },
-    { icon: <Globe className="h-6 w-6" />, title: "Multi-Language", description: "Support for 50+ languages" },
-    { icon: <Smartphone className="h-6 w-6" />, title: "QR Code Payments", description: "Mobile payment solutions" },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Guest Checkout",
+      description: "No account required to purchase",
+    },
+    {
+      icon: <Mail className="h-6 w-6" />,
+      title: "Order Notifications",
+      description: "Automated email & SMS alerts",
+    },
+    {
+      icon: <BarChart3 className="h-6 w-6" />,
+      title: "Inventory Alerts",
+      description: "Low stock notifications",
+    },
+    {
+      icon: <Globe className="h-6 w-6" />,
+      title: "Multi-Language",
+      description: "Support for 50+ languages",
+    },
+    {
+      icon: <Smartphone className="h-6 w-6" />,
+      title: "QR Code Payments",
+      description: "Mobile payment solutions",
+    },
     {
       icon: <Search className="h-6 w-6" />,
       title: "Product Comparison",
       description: "Side-by-side product comparison",
     },
-    { icon: <Settings className="h-6 w-6" />, title: "Tax Calculation", description: "Automated tax computation" },
+    {
+      icon: <Settings className="h-6 w-6" />,
+      title: "Tax Calculation",
+      description: "Automated tax computation",
+    },
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Age Verification",
       description: "Compliance for restricted products",
     },
-    { icon: <TrendingUp className="h-6 w-6" />, title: "A/B Testing", description: "Optimize conversion rates" },
-    { icon: <Zap className="h-6 w-6" />, title: "Real-time Sync", description: "Instant inventory updates" },
-  ]
+    {
+      icon: <TrendingUp   />,
+      title: "A/B Testing",
+      description: "Optimize conversion rates",
+    },
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: "Real-time Sync",
+      description: "Instant inventory updates",
+    },
+  ];
+
+  // Carousel images
+  const carouselImages = [
+    {
+      src: "/ecommerce-customer-3.png",
+      alt: "Features Dashboard Preview",
+    },
+    {
+      src: "/ecommerce-customer-1.png",
+      alt: "Product Management Interface",
+    },
+    {
+      src: "/ecommerce-customer-2.jpg",
+      alt: "Analytics Dashboard",
+    },
+    {
+      src: "/ecommerce-customer-3.png",
+      alt: "Analytics Dashboard",
+    },
+  ];
+
+  // Carousel component
+  const Carousel = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const prevSlide = () => {
+      setCurrentIndex((prev) =>
+        prev === 0 ? carouselImages.length - 1 : prev - 1
+      );
+    };
+
+    const nextSlide = () => {
+      setCurrentIndex((prev) =>
+        prev === carouselImages.length - 1 ? 0 : prev + 1
+      );
+    };
+
+    return (
+      <div className="relative">
+        <div className="relative w-full overflow-hidden rounded-lg">
+          <div
+            className="flex transition-transform duration-500"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {carouselImages.map((image, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={1000}
+                  height={600}
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+        {/* Dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {carouselImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full ${
+                currentIndex === index ? "bg-white" : "bg-gray-400"
+              }`}
+            ></button>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -233,7 +353,9 @@ export default function FeaturesPage() {
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">🚀 All Features Included</Badge>
+          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
+            🚀 All Features Included
+          </Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Powerful Features for{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -241,8 +363,9 @@ export default function FeaturesPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Everything you need to build, manage, and scale your ecommerce business. From inventory management to
-            advanced analytics, we&apos;ve got you covered.
+            Everything you need to build, manage, and scale your ecommerce
+            business. From inventory management to advanced analytics,
+            we&apos;ve got you covered.
           </p>
           <Button
             size="lg"
@@ -258,9 +381,12 @@ export default function FeaturesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Core Features</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Core Features
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive tools designed to help you succeed in today&apos;s competitive market
+              Comprehensive tools designed to help you succeed in today&apos;s
+              competitive market
             </p>
           </div>
 
@@ -272,8 +398,12 @@ export default function FeaturesPage() {
               >
                 <CardContent className="p-0">
                   <div className="text-blue-600 mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 mb-6 text-lg">{feature.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-lg">
+                    {feature.description}
+                  </p>
                   <ul className="space-y-2">
                     {feature.features.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-center">
@@ -293,9 +423,12 @@ export default function FeaturesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Complete Ecommerce Solution</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Complete Ecommerce Solution
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to run a successful online store, from product management to customer support
+              Everything you need to run a successful online store, from product
+              management to customer support
             </p>
           </div>
 
@@ -306,7 +439,9 @@ export default function FeaturesPage() {
                   <ShoppingBag className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Storefront</h3>
-                <p className="text-sm text-gray-600">Beautiful, responsive online store</p>
+                <p className="text-sm text-gray-600">
+                  Beautiful, responsive online store
+                </p>
               </CardContent>
             </Card>
 
@@ -316,7 +451,9 @@ export default function FeaturesPage() {
                   <CreditCard className="h-8 w-8 text-green-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Payments</h3>
-                <p className="text-sm text-gray-600">Secure payment processing</p>
+                <p className="text-sm text-gray-600">
+                  Secure payment processing
+                </p>
               </CardContent>
             </Card>
 
@@ -326,7 +463,9 @@ export default function FeaturesPage() {
                   <TrendingUp className="h-8 w-8 text-purple-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Orders</h3>
-                <p className="text-sm text-gray-600">Complete order management</p>
+                <p className="text-sm text-gray-600">
+                  Complete order management
+                </p>
               </CardContent>
             </Card>
 
@@ -336,34 +475,48 @@ export default function FeaturesPage() {
                   <Users className="h-8 w-8 text-orange-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Customers</h3>
-                <p className="text-sm text-gray-600">Customer relationship management</p>
+                <p className="text-sm text-gray-600">
+                  Customer relationship management
+                </p>
               </CardContent>
             </Card>
           </div>
 
           <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Frontend Features</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Frontend Features
+              </h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Responsive product catalog</span>
+                  <span className="text-gray-700">
+                    Responsive product catalog
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Advanced search & filtering</span>
+                  <span className="text-gray-700">
+                    Advanced search & filtering
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Shopping cart & wishlist</span>
+                  <span className="text-gray-700">
+                    Shopping cart & wishlist
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">User accounts & profiles</span>
+                  <span className="text-gray-700">
+                    User accounts & profiles
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Product reviews & ratings</span>
+                  <span className="text-gray-700">
+                    Product reviews & ratings
+                  </span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
@@ -373,7 +526,9 @@ export default function FeaturesPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Backend Features</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Backend Features
+              </h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
@@ -409,20 +564,18 @@ export default function FeaturesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">See It In Action</h2>
-            <p className="text-xl text-gray-600">Experience the power of our platform with an interactive demo</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              See It In Action
+            </h2>
+            <p className="text-xl text-gray-600">
+              Experience the power of our platform with an interactive demo
+            </p>
           </div>
 
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-3xl"></div>
             <div className="relative bg-white rounded-2xl shadow-2xl p-4">
-              <Image
-                src="/placeholder.svg?height=600&width=1000"
-                alt="Features Dashboard Preview"
-                width={1000}
-                height={600}
-                className="w-full rounded-lg"
-              />
+              <Carousel />
             </div>
           </div>
         </div>
@@ -432,8 +585,12 @@ export default function FeaturesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">And Much More</h2>
-            <p className="text-xl text-gray-600">Additional tools to supercharge your business</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              And Much More
+            </h2>
+            <p className="text-xl text-gray-600">
+              Additional tools to supercharge your business
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -444,7 +601,9 @@ export default function FeaturesPage() {
               >
                 <CardContent className="p-0">
                   <div className="text-blue-600 mb-4">{feature.icon}</div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-Kids2">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </CardContent>
               </Card>
@@ -457,8 +616,12 @@ export default function FeaturesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Built for Scale & Performance</h2>
-            <p className="text-xl text-gray-600">Enterprise-grade architecture that grows with your business</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Built for Scale & Performance
+            </h2>
+            <p className="text-xl text-gray-600">
+              Enterprise-grade architecture that grows with your business
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -467,7 +630,9 @@ export default function FeaturesPage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                   <Zap className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">High Performance</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  High Performance
+                </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Sub-second page load times</li>
                   <li>• Global CDN distribution</li>
@@ -483,7 +648,9 @@ export default function FeaturesPage() {
                 <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
                   <Shield className="h-8 w-8 text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Security First</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Security First
+                </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• SSL/TLS encryption</li>
                   <li>• PCI DSS compliance</li>
@@ -499,7 +666,9 @@ export default function FeaturesPage() {
                 <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                   <Settings className="h-8 w-8 text-purple-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Scalable Infrastructure</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Scalable Infrastructure
+                </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Auto-scaling servers</li>
                   <li>• Load balancing</li>
@@ -515,8 +684,8 @@ export default function FeaturesPage() {
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">Ready for Enterprise</h3>
               <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Handle millions of products, thousands of concurrent users, and process high-volume transactions with
-                confidence.
+                Handle millions of products, thousands of concurrent users, and
+                process high-volume transactions with confidence.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
                 <div>
@@ -545,13 +714,19 @@ export default function FeaturesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Seamless Integrations</h2>
-            <p className="text-xl text-gray-600">Connect with your favorite tools and services</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Seamless Integrations
+            </h2>
+            <p className="text-xl text-gray-600">
+              Connect with your favorite tools and services
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <h3 className="font-semibold text-gray-900 mb-4">Payment Gateways</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Payment Gateways
+              </h3>
               <div className="space-y-2 text-gray-600">
                 <div>Stripe</div>
                 <div>PayPal</div>
@@ -562,7 +737,9 @@ export default function FeaturesPage() {
             </div>
 
             <div className="text-center">
-              <h3 className="font-semibold text-gray-900 mb-4">Shipping Partners</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Shipping Partners
+              </h3>
               <div className="space-y-2 text-gray-600">
                 <div>FedEx</div>
                 <div>UPS</div>
@@ -573,7 +750,9 @@ export default function FeaturesPage() {
             </div>
 
             <div className="text-center">
-              <h3 className="font-semibold text-gray-900 mb-4">Marketing Tools</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Marketing Tools
+              </h3>
               <div className="space-y-2 text-gray-600">
                 <div>Mailchimp</div>
                 <div>Klaviyo</div>
@@ -600,10 +779,17 @@ export default function FeaturesPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-blue-100 mb-8">Try all features free for 14 days. No credit card required.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Try all features free for 14 days. No credit card required.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
+            <Button
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
+            >
               Start Free Trial
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -620,5 +806,5 @@ export default function FeaturesPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
