@@ -250,7 +250,7 @@ export default function FeaturesPage() {
       description: "Compliance for restricted products",
     },
     {
-      icon: <TrendingUp   />,
+      icon: <TrendingUp />,
       title: "A/B Testing",
       description: "Optimize conversion rates",
     },
@@ -277,6 +277,22 @@ export default function FeaturesPage() {
     },
     {
       src: "/ecommerce-customer-3.png",
+      alt: "Analytics Dashboard",
+    },
+    {
+      src: "/ecommerce-customer-4.jpg",
+      alt: "Analytics Dashboard",
+    },
+    {
+      src: "/ecommerce-customer-5.jpg",
+      alt: "Analytics Dashboard",
+    },
+    {
+      src: "/ecommerce-customer-6.jpg",
+      alt: "Analytics Dashboard",
+    },
+     {
+      src: "/ecommerce-customer-7.png",
       alt: "Analytics Dashboard",
     },
   ];
