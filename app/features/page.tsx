@@ -22,6 +22,8 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
+  Bell,
+  Store,
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -196,6 +198,34 @@ export default function FeaturesPage() {
         "Load balancing",
       ],
     },
+    {
+      icon: <Store className="h-12 w-12 " />,
+      title: "Store Management",
+      description:
+        "Comprehensive tools to manage your store’s products, inventory, and orders with real-time insights and control.",
+      features: [
+        "Product and inventory management",
+        "Order tracking and fulfillment",
+        "Real-time stock updates",
+        "Category & attribute management",
+        "Sales analytics & reporting",
+        "Multi-store management support",
+      ],
+    },
+    {
+      icon: <Bell className="h-12 w-12 " />,
+      title: "Notifications & Alerts",
+      description:
+        "Keep your users and team informed with real-time notifications via push, email, and SMS integrations.",
+      features: [
+        "Instant order and activity alerts",
+        "Custom push notifications",
+        "Email & SMS integration",
+        "User preference management",
+        "System health notifications",
+        "Alert logs and analytics",
+      ],
+    },
   ];
 
   const additionalFeatures = [
@@ -291,7 +321,7 @@ export default function FeaturesPage() {
       src: "/ecommerce-customer-6.jpg",
       alt: "Analytics Dashboard",
     },
-     {
+    {
       src: "/ecommerce-customer-7.png",
       alt: "Analytics Dashboard",
     },
@@ -387,7 +417,7 @@ export default function FeaturesPage() {
             size="lg"
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-3"
           >
-            Start Free Trial
+            Get in touch
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
@@ -694,6 +724,43 @@ export default function FeaturesPage() {
                 </ul>
               </CardContent>
             </Card>
+            {/* Store Management */}
+            <Card className="p-8 bg-white">
+              <CardContent className="p-0">
+                <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                  <Store className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Store Management
+                </h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Manage product inventory</li>
+                  <li>• Track and fulfill orders</li>
+                  <li>• Real-time stock updates</li>
+                  <li>• Category & attribute controls</li>
+                  <li>• Sales reporting & analytics</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Notifications */}
+            <Card className="p-8 bg-white">
+              <CardContent className="p-0">
+                <div className="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+                  <Bell className="h-8 w-8 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Notifications
+                </h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Instant order updates</li>
+                  <li>• Custom push notifications</li>
+                  <li>• Email & SMS integrations</li>
+                  <li>• Activity and alert logs</li>
+                  <li>• User preference management</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
@@ -806,7 +873,7 @@ export default function FeaturesPage() {
               size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
             >
-              Start Free Trial
+              Get in touch
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button

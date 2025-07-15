@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { ShoppingBag, Menu, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ShoppingBag, Menu, X } from "lucide-react";
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { href: "/features", label: "Features" },
-    { href: "/pricing", label: "Pricing" },
+    // { href: "/pricing", label: "Pricing" },
     { href: "/reviews", label: "Reviews" },
     { href: "/contact", label: "Contact" },
-  ]
+  ];
 
-  const isActive = (href: string) => pathname === href
+  const isActive = (href: string) => pathname === href;
 
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
@@ -43,7 +43,9 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   className={`px-3 py-2 text-sm font-medium transition-colors relative ${
-                    isActive(link.href) ? "text-blue-600 font-semibold" : "text-gray-700 hover:text-blue-600"
+                    isActive(link.href)
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-700 hover:text-blue-600"
                   }`}
                 >
                   {link.label}
@@ -57,13 +59,21 @@ export default function Navigation() {
 
           <div className="hidden md:flex items-center">
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-              Start Free Trial
+              Get in touch
             </Button>
           </div>
 
           <div className="md:hidden">
-            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -88,11 +98,13 @@ export default function Navigation() {
               </Link>
             ))}
             <div className="px-3 py-2">
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">Start Free Trial</Button>
+              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
+                Start Free Trial
+              </Button>
             </div>
           </div>
         </div>
       )}
     </nav>
-  )
+  );
 }

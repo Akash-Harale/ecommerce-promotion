@@ -467,14 +467,14 @@ export default function ContactPage() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Don&apos;t wait - start your free trial today and see why thousands of
-            businesses choose CommerceMax
+            Don&apos;t wait - start your free trial today and see why thousands
+            of businesses choose CommerceMax
           </p>
           <Button
             size="lg"
             className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
           >
-            Start Free Trial
+            Get in touch
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
