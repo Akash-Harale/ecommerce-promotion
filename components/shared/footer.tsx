@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center mb-4">
-              <div className="h-8 w-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center mr-3">
                 <ShoppingBag className="h-5 w-5 text-white" />
               </div>
               <span className="text-xl font-bold">CommerceMax</span>

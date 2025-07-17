@@ -155,11 +155,11 @@ export default function ReviewsPage() {
           <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
             ⭐ 4.9/5 Average Rating
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="heading">
             Loved by{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              50,000+ Businesses
-            </span>
+            {/* <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> */}
+            50,000+ Businesses
+            {/* </span> */}
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             See what our customers have to say about their success with
@@ -195,7 +195,7 @@ export default function ReviewsPage() {
           <div className="relative">
             <Card className="p-8 lg:p-12 text-center bg-gradient-to-br from-blue-50 to-purple-50 border-0">
               <CardContent className="p-0">
-                <Quote className="h-12 w-12 text-blue-600 mx-auto mb-6" />
+                <Quote className="h-12 w-12 text-primary mx-auto mb-6" />
                 <div className="flex justify-center mb-6">
                   {[...Array(testimonials[currentTestimonial].rating)].map(
                     (_, i) => (
@@ -357,7 +357,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to Join Our Success Stories?

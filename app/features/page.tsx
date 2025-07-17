@@ -31,7 +31,7 @@ import { useState } from "react";
 export default function FeaturesPage() {
   const mainFeatures = [
     {
-      icon: <ShoppingBag className="h-12 w-12" />,
+      icon: <ShoppingBag className="h-12 w-12 text-primary" />,
       title: "Product Catalog Management",
       description:
         "Complete product management system with unlimited products, variants, categories, and advanced inventory tracking across multiple locations.",
@@ -45,7 +45,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <CreditCard className="h-12 w-12" />,
+      icon: <CreditCard className="h-12 w-12 text-primary" />,
       title: "Payment Processing",
       description:
         "Secure payment gateway supporting 50+ payment methods including credit cards, digital wallets, and buy-now-pay-later options.",
@@ -59,7 +59,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <TrendingUp className="h-12 w-12" />,
+      icon: <TrendingUp className="h-12 w-12 text-primary" />,
       title: "Order Management System",
       description:
         "Streamlined order processing with automated workflows, order tracking, and comprehensive fulfillment management.",
@@ -73,7 +73,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Users className="h-12 w-12" />,
+      icon: <Users className="h-12 w-12 text-primary" />,
       title: "Customer Management (CRM)",
       description:
         "Advanced customer relationship management with profiles, segmentation, loyalty programs, and personalized experiences.",
@@ -87,7 +87,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Smartphone className="h-12 w-12" />,
+      icon: <Smartphone className="h-12 w-12 text-primary" />,
       title: "Mobile Commerce",
       description:
         "Fully responsive design with mobile-optimized checkout, progressive web app features, and native mobile app support.",
@@ -101,7 +101,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <BarChart3 className="h-12 w-12" />,
+      icon: <BarChart3 className="h-12 w-12 text-primary" />,
       title: "Analytics & Reporting",
       description:
         "Comprehensive business intelligence with real-time dashboards, sales analytics, and actionable insights for growth.",
@@ -115,7 +115,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Search className="h-12 w-12" />,
+      icon: <Search className="h-12 w-12 text-primary" />,
       title: "Search & Navigation",
       description:
         "Advanced search functionality with filters, autocomplete, and intelligent product recommendations to enhance user experience.",
@@ -129,7 +129,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Mail className="h-12 w-12" />,
+      icon: <Mail className="h-12 w-12 text-primary" />,
       title: "Marketing Automation",
       description:
         "Built-in marketing tools including email campaigns, abandoned cart recovery, and social media integration.",
@@ -143,7 +143,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Globe className="h-12 w-12" />,
+      icon: <Globe className="h-12 w-12 text-primary" />,
       title: "Multi-Channel Selling",
       description:
         "Sell across multiple channels including marketplaces, social media, and in-person with unified inventory management.",
@@ -157,7 +157,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Shield className="h-12 w-12" />,
+      icon: <Shield className="h-12 w-12 text-primary" />,
       title: "Security & Compliance",
       description:
         "Enterprise-grade security with SSL encryption, fraud protection, GDPR compliance, and regular security audits.",
@@ -171,7 +171,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Settings className="h-12 w-12" />,
+      icon: <Settings className="h-12 w-12 text-primary" />,
       title: "Customization & Integration",
       description:
         "Flexible platform with custom themes, API access, third-party integrations, and developer-friendly tools.",
@@ -185,7 +185,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Zap className="h-12 w-12" />,
+      icon: <Zap className="h-12 w-12 text-primary" />,
       title: "Performance & Scalability",
       description:
         "High-performance infrastructure with global CDN, auto-scaling, and 99.9% uptime guarantee for growing businesses.",
@@ -199,7 +199,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Store className="h-12 w-12 " />,
+      icon: <Store className="h-12 w-12 text-primary" />,
       title: "Store Management",
       description:
         "Comprehensive tools to manage your store’s products, inventory, and orders with real-time insights and control.",
@@ -213,7 +213,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      icon: <Bell className="h-12 w-12 " />,
+      icon: <Bell className="h-12 w-12 text-primary" />,
       title: "Notifications & Alerts",
       description:
         "Keep your users and team informed with real-time notifications via push, email, and SMS integrations.",
@@ -230,62 +230,62 @@ export default function FeaturesPage() {
 
   const additionalFeatures = [
     {
-      icon: <ShoppingBag className="h-6 w-6" />,
+      icon: <ShoppingBag className="h-6 w-6 text-primary" />,
       title: "Shopping Cart",
       description: "Persistent cart with save for later",
     },
     {
-      icon: <CreditCard className="h-6 w-6" />,
+      icon: <CreditCard className="h-6 w-6 text-primary" />,
       title: "One-Click Checkout",
       description: "Streamlined checkout process",
     },
     {
-      icon: <Users className="h-6 w-6" />,
+      icon: <Users className="h-6 w-6 text-primary" />,
       title: "Guest Checkout",
       description: "No account required to purchase",
     },
     {
-      icon: <Mail className="h-6 w-6" />,
+      icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Order Notifications",
       description: "Automated email & SMS alerts",
     },
     {
-      icon: <BarChart3 className="h-6 w-6" />,
+      icon: <BarChart3 className="h-6 w-6 text-primary" />,
       title: "Inventory Alerts",
       description: "Low stock notifications",
     },
     {
-      icon: <Globe className="h-6 w-6" />,
+      icon: <Globe className="h-6 w-6 text-primary" />,
       title: "Multi-Language",
       description: "Support for 50+ languages",
     },
     {
-      icon: <Smartphone className="h-6 w-6" />,
+      icon: <Smartphone className="h-6 w-6 text-primary" />,
       title: "QR Code Payments",
       description: "Mobile payment solutions",
     },
     {
-      icon: <Search className="h-6 w-6" />,
+      icon: <Search className="h-6 w-6 text-primary" />,
       title: "Product Comparison",
       description: "Side-by-side product comparison",
     },
     {
-      icon: <Settings className="h-6 w-6" />,
+      icon: <Settings className="h-6 w-6 text-primary" />,
       title: "Tax Calculation",
       description: "Automated tax computation",
     },
     {
-      icon: <Shield className="h-6 w-6" />,
+      icon: <Shield className="h-6 w-6 text-primary" />,
       title: "Age Verification",
       description: "Compliance for restricted products",
     },
     {
-      icon: <TrendingUp />,
+      icon: <TrendingUp className="h-6 w-6 text-primary" />,
       title: "A/B Testing",
       description: "Optimize conversion rates",
     },
     {
-      icon: <Zap className="h-6 w-6" />,
+      icon: <Zap className="h-6 w-6 text-primary" />,
       title: "Real-time Sync",
       description: "Instant inventory updates",
     },
@@ -402,11 +402,11 @@ export default function FeaturesPage() {
           <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
             🚀 All Features Included
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="heading">
             Powerful Features for{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Modern Commerce
-            </span>
+            {/* <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> */}
+            Modern Commerce
+            {/* </span> */}
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Everything you need to build, manage, and scale your ecommerce
@@ -415,7 +415,7 @@ export default function FeaturesPage() {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-3"
+            className="bg-primary hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-3"
           >
             Get in touch
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -763,10 +763,10 @@ export default function FeaturesPage() {
             </Card>
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="mt-16 bg-primary to-purple-600 rounded-2xl p-8 text-white">
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">Ready for Enterprise</h3>
-              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              <p className="text-white mb-6 max-w-2xl mx-auto">
                 Handle millions of products, thousands of concurrent users, and
                 process high-volume transactions with confidence.
               </p>
@@ -860,12 +860,12 @@ export default function FeaturesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-white mb-8">
             Try all features free for 14 days. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

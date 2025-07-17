@@ -53,21 +53,21 @@ export default function ContactPage() {
 
   const contactMethods = [
     {
-      icon: <Mail className="h-8 w-8" />,
+      icon: <Mail className="h-8 w-8 text-primary" />,
       title: "Email Support",
       description: "Get help via email within 24 hours",
       contact: "support@commercemax.com",
       action: "Send Email",
     },
     {
-      icon: <Phone className="h-8 w-8" />,
+      icon: <Phone className="h-8 w-8 text-primary" />,
       title: "Phone Support",
       description: "Speak with our experts directly",
       contact: "+1 (555) 123-4567",
       action: "Call Now",
     },
     {
-      icon: <MessageCircle className="h-8 w-8" />,
+      icon: <MessageCircle className="h-8 w-8 text-primary" />,
       title: "Live Chat",
       description: "Chat with us in real-time",
       contact: "Available 24/7",
@@ -98,19 +98,19 @@ export default function ContactPage() {
 
   const supportOptions = [
     {
-      icon: <Users className="h-6 w-6" />,
+      icon: <Users className="h-6 w-6 text-primary" />,
       title: "Sales Team",
       description: "Questions about pricing and plans",
       availability: "Mon-Fri, 9AM-6PM PST",
     },
     {
-      icon: <Headphones className="h-6 w-6" />,
+      icon: <Headphones className="h-6 w-6 text-primary" />,
       title: "Technical Support",
       description: "Help with setup and troubleshooting",
       availability: "24/7 Support Available",
     },
     {
-      icon: <MessageCircle className="h-6 w-6" />,
+      icon: <MessageCircle className="h-6 w-6 text-primary" />,
       title: "Customer Success",
       description: "Guidance on growing your business",
       availability: "Mon-Fri, 8AM-8PM PST",
@@ -156,11 +156,11 @@ export default function ContactPage() {
           <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
             💬 We&apos;re Here to Help
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="heading">
             Get in{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Touch
-            </span>
+            {/* <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> */}
+            Touch
+            {/* </span> */}
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Have questions? We&apos;d love to hear from you. Send us a message
@@ -198,7 +198,7 @@ export default function ContactPage() {
                   <p className="font-semibold text-gray-900 mb-4">
                     {method.contact}
                   </p>
-                  <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                  <Button className="bg-primary  hover:from-blue-700 hover:to-purple-700">
                     {method.action}
                   </Button>
                 </CardContent>
@@ -305,7 +305,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  className="w-full bg-primary hover:from-blue-700 hover:to-purple-700"
                 >
                   Send Message
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -461,7 +461,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to Get Started?

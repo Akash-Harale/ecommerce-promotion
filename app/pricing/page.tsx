@@ -118,11 +118,11 @@ export default function PricingPage() {
           <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
             💰 Simple, Transparent Pricing
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="heading">
             Choose the Perfect{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {/* <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> */}
               Plan for You
-            </span>
+            {/* </span> */}
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Start with a free trial, then choose a plan that scales with your
