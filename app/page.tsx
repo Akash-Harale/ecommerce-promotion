@@ -104,17 +104,7 @@ export default function EcommerceLanding() {
         >
           <ChevronRight className="h-6 w-6" />
         </button>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full ${
-                currentIndex === index ? "bg-white" : "bg-gray-400"
-              }`}
-            ></button>
-          ))}
-        </div>
+        
       </div>
     );
   };
@@ -728,7 +718,7 @@ export default function EcommerceLanding() {
           </div>
           <div className="space-y-16">
             <div className="text-center ">
-              <div className="shadow-2xl rounded-3xl h-50 sm:h-80 md:h-[580px] lg:h-full w-full max-w-full mx-auto">
+              <div className="shadow-2xl rounded-3xl  h-50 sm:h-80 md:h-[580px] lg:h-full w-full max-w-full mx-auto">
                 <Carousel images={webCarouselImages} />
               </div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mt-6">
@@ -740,14 +730,7 @@ export default function EcommerceLanding() {
               </p>
             </div>
             <div className="text-center">
-              {/* <Image
-                src="/logistic-1.png"
-                alt="Mobile App"
-                width={1280}
-                height={720}
-                className="w-full rounded-lg shadow-lg object-cover"
-              /> */}
-              <div className="shadow-1xl rounded-3xl h-50 sm:h-80 md:h-[580px] lg:h-full w-full max-w-full mx-auto">
+              <div className="shadow-2xl rounded-3xl h-50 not-sm:h-70 sm:h-80 md:h-[580px] lg:h-full w-full max-w-full mx-auto">
                 <Carousel images={mpbileCarouselImages} />
               </div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mt-6">
