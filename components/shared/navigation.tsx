@@ -33,8 +33,8 @@ export default function Navigation() {
                 <ShoppingBag className="h-5 w-5 text-white" />
               </div>
               <div className="ml-3">
-                <span className="text-xl font-bold bg-primary bg-clip-text text-transparent">
-                  CommerceMax
+                <span  className="text-xl font-bold bg-primary bg-clip-text text-transparent">
+                 <Link href="/"></Link> CommerceMax
                 </span>
               </div>
             </Link>
