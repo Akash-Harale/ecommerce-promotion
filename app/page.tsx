@@ -23,7 +23,7 @@ import {
   Mail,
   Settings,
   // Quote,
-  MapPin,
+  // MapPin,
   Phone,
   Clock,
   MessageCircle,
@@ -51,8 +51,8 @@ export default function EcommerceLanding() {
     { src: "/ecommerce-customer-3.png", alt: "Web App - Orders" },
   ];
   const mpbileCarouselImages = [
-    { src: "/mobile-app.png", alt: "Web App - Dashboard" },
-    { src: "/mobile-app-2.jpg", alt: "Web App - Dashboard" },
+    { src: "/mobile-app-1.jpeg", alt: "Web App - Dashboard" },
+    { src: "/mobile-app-2.jpeg", alt: "Web App - Dashboard" },
   ];
 
   const logisticsCarouselImages = [
@@ -556,26 +556,26 @@ export default function EcommerceLanding() {
     },
   ];
 
-  const officeLocations = [
-    {
-      city: "San Francisco",
-      address: "123 Market Street, Suite 100",
-      zipcode: "San Francisco, CA 94105",
-      phone: "+1 (555) 123-4567",
-    },
-    {
-      city: "New York",
-      address: "456 Broadway, Floor 20",
-      zipcode: "New York, NY 10013",
-      phone: "+1 (555) 987-6543",
-    },
-    {
-      city: "London",
-      address: "789 Oxford Street",
-      zipcode: "London, UK W1C 1JN",
-      phone: "+44 20 7123 4567",
-    },
-  ];
+  // const officeLocations = [
+  //   {
+  //     city: "San Francisco",
+  //     address: "123 Market Street, Suite 100",
+  //     zipcode: "San Francisco, CA 94105",
+  //     phone: "+1 (555) 123-4567",
+  //   },
+  //   {
+  //     city: "New York",
+  //     address: "456 Broadway, Floor 20",
+  //     zipcode: "New York, NY 10013",
+  //     phone: "+1 (555) 987-6543",
+  //   },
+  //   {
+  //     city: "London",
+  //     address: "789 Oxford Street",
+  //     zipcode: "London, UK W1C 1JN",
+  //     phone: "+44 20 7123 4567",
+  //   },
+  // ];
 
   const faqs = [
     {
@@ -1464,7 +1464,7 @@ export default function EcommerceLanding() {
                   className="p-6 text-center hover:shadow-lg transition-shadow border-0 bg-white"
                 >
                   <CardContent className="p-0">
-                    <div className="text-blue-600 mb-4 flex justify-center">
+                    <div className="text-primary mb-4 flex justify-center">
                       {option.icon}
                     </div>
                     <h4 className="text-xl font-semibold text-gray-900 mb-2">
@@ -1482,7 +1482,7 @@ export default function EcommerceLanding() {
           </div>
 
           {/* Office Locations */}
-          <div>
+          {/* <div>
             <div className="text-center mb-12">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Our Offices
@@ -1516,7 +1516,7 @@ export default function EcommerceLanding() {
                 </Card>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
