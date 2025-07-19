@@ -34,7 +34,7 @@ export default function Navigation() {
               </div>
               <div className="ml-3">
                 <span  className="text-xl font-bold bg-primary bg-clip-text text-transparent">
-                 <Link href="/"></Link> CommerceMax
+                 <Link href="/"></Link> Shop Now
                 </span>
               </div>
             </Link>

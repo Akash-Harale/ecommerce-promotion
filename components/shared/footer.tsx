@@ -14,7 +14,7 @@ export default function Footer() {
               <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center mr-3">
                 <ShoppingBag className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">CommerceMax</span>
+              <span className="text-xl font-bold">Shop Now</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               The most powerful ecommerce platform to build, manage, and scale
@@ -156,7 +156,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 CommerceMax. All rights reserved.</p>
+          <p>&copy; 2024 Shop Now. All rights reserved.</p>
         </div>
       </div>
     </footer>

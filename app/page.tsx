@@ -516,14 +516,14 @@ export default function EcommerceLanding() {
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support",
       description: "Get help via email within 24 hours",
-      contact: "support@commercemax.com",
+      contact: "info@b2yinfy.com",
       action: "Send Email",
     },
     {
       icon: <Phone className="h-8 w-8" />,
       title: "Phone Support",
       description: "Speak with our experts directly",
-      contact: "+1 (555) 123-4567",
+      contact: "(+91) 7989739209",
       action: "Call Now",
     },
     {
@@ -1554,7 +1554,7 @@ export default function EcommerceLanding() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of successful businesses already using CommerceMax.
+            Join thousands of successful businesses already using Shop Now.
             Start your free trial today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
