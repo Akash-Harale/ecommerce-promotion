@@ -20,27 +20,66 @@ export default function Footer() {
               The most powerful ecommerce platform to build, manage, and scale
               your online business.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap space-x-4 md:w-[90%] ">
               <Button
                 variant="ghost"
                 size="sm"
                 className="text-gray-400 hover:text-white hover:bg-black"
               >
-                Twitter
+                <Link href={"https://x.com/b2yinfy"}>Twitter</Link>
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 className="text-gray-400 hover:text-white hover:bg-black"
               >
-                LinkedIn
+                <Link href={"https://www.linkedin.com/company/b2yinfy/"}>
+                  LinkedIn
+                </Link>
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 className="text-gray-400 hover:text-white hover:bg-black"
               >
-                Facebook
+                <Link href={"https://www.youtube.com/watch?v=OSG3sdSiOi8"}>
+                  YouTube
+                </Link>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-400 hover:text-white hover:bg-black"
+              >
+                <Link
+                  href={
+                    "https://www.facebook.com/profile.php?id=61556235036174"
+                  }
+                >
+                  Facebook
+                </Link>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-400 hover:text-white hover:bg-black"
+              >
+                <Link href={"https://www.instagram.com/b2yinfy/%22"}>
+                  Instagram
+                </Link>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-gray-400 hover:text-white hover:bg-black"
+              >
+                <Link
+                  href={
+                    "https://www.whatsapp.com/channel/0029VaZpddKF1YlQjvFsbH2A"
+                  }
+                >
+                  WhatsApp
+                </Link>
               </Button>
             </div>
           </div>
@@ -156,7 +195,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Shop Now. All rights reserved.</p>
+          <p>&copy; 2025 Shop Now. All rights reserved.</p>
         </div>
       </div>
     </footer>
